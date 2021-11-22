@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Alert Dialog example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -27,8 +27,32 @@ class MyAlertDialogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+                child: const Text('Launch AlertDialog'),
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text("Important!"),
+                          content: const Text("This is an important info"),
+                        );
+                      }
+                  );
+                },
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
 }
