@@ -44,6 +44,14 @@ class MyAlertDialogPage extends StatelessWidget {
                         return AlertDialog(
                           title: const Text("Important!"),
                           content: const Text("This is an important info"),
+                          actions: <Widget>[
+                            ElevatedButton(
+                              child: const Text("Close"),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            )
+                          ],
                         );
                       }
                   );
